@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Question Paper Generator</title>
+</head>
+<body>
+  <h1>Question Paper Generator</h1>
+  <% if (alertMessage) { %>
+    <script>
+      alert("<%= alertMessage %>");
+    </script>
+  <% } %>
+  <form action="/generate" method="post">
+    <label for="totalMarks">Total Marks:</label>
+    <input type="number" name="totalMarks" required>
+    
+    <label for="easyPercentage">Easy Difficulty (%):</label>
+    <input type="number" name="easyPercentage" required>
+    
+    <label for="mediumPercentage">Medium Difficulty (%):</label>
+    <input type="number" name="mediumPercentage" required>
+    
+    <label for="hardPercentage">Hard Difficulty (%):</label>
+    <input type="number" name="hardPercentage" required>
+
+    <h3>Topic Distribution (%)</h3>
+    <% allTopics.forEach(topic => { %>
+        <label for="<%= `${topic.toLowerCase()}Percentage` %>"><%= topic %>:</label>
+        <input type="number" name="<%= `${topic.toLowerCase()}Percentage` %>" required>
+      <% }); %>
+  
+
+    <button type="submit">Generate Question Paper</button>
+  </form>
+
+  <% if (generatedQuestionPaper) { %>
+    <h2>Generated Question Paper:</h2>
+    <ol>
+      <% generatedQuestionPaper.forEach((question, index) => { %>
+        <li><%= `${index + 1}. ${question.question} (${question.marks} marks)` %></li>
+      <% }); %>
+    </ol>
+  <% } %>
+</body>
+</html>
