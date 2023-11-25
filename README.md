@@ -9,6 +9,7 @@ This Node.js application generates a random question paper based on user-defined
 - Define the distribution of questions based on difficulty (Easy, Medium, Hard).
 - Customize the percentage distribution of questions for each topic.
 - Modular and extensible code architecture.
+- 30 Physics Questions( 5 Topics, 10 Question of each difficulty, 6 of each topic )
 
 ## Prerequisites
 
