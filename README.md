@@ -20,5 +20,12 @@ This Node.js application generates a random question paper based on user-defined
 
 ```bash
 git clone https://github.com/your-username/question-paper-generator.git
+cd Reelo
+npm install
+npm i express ejs
+node server.js
+
+
+
 
 
