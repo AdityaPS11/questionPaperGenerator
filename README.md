@@ -16,14 +16,20 @@ This Node.js application generates a random question paper based on user-defined
 
 ## Getting Started
 
-1. Clone the repository:
-
 ```bash
 git clone https://github.com/your-username/question-paper-generator.git
 cd Reelo
 npm install
 npm i express ejs
 node server.js
+```
+
+## Usage
+
+1. Enter the total marks for the question paper.
+2. Specify the percentage distribution of questions for Easy, Medium, and Hard difficulty levels.
+3. Input the percentage distribution of questions for each topic.
+4. Click the "Generate Question Paper" button to create a random question paper.
 
 
 
